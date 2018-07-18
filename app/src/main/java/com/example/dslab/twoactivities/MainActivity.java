@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mReplyTextView;
     public static final int TEXT_REQUEST = 1;
   public EditText mMessageEditText;
-    private static final String LOG_TAG = MainActivity.class.getSimpleName();;
+    private static final String LOG_TAG = MainActivity.class.getSimpleName();
     public static final String EXTRA_MESSAGE =
             "com.example.android.twoactivities.extra.MESSAGE";
 
@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
     public void launchSecondActivity(View view) {
         Log.d(LOG_TAG, "Button clicked!");
         Intent intent = new Intent(this, SecondActivity.class);
-       // String message = mMessageEditText.getText().toString();
-        //intent.putExtra(EXTRA_MESSAGE, message);
+       String message = mMessageEditText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
         startActivityForResult(intent, TEXT_REQUEST);
 
     }
